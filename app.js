@@ -9,6 +9,8 @@ function initApp() {
   console.log("App initialized");
 }
 
+// ======== TEST SEKTION ===========
+//nyt produkt 1
 const productTitle = "Fjallraven - Foldsack No. 1 Backpack"; //string
 const productPrice = 849; //number
 const inStock = true; //boolean
@@ -28,4 +30,13 @@ const html = `
     <p><strong>På lager:</strong> ${inStock}</p>
   </div>
 `;
-testSection.insertAdjacentHTML("berforeend", html);
+testSection.insertAdjacentHTML("beforeend", html);
+
+//nyt produkt 2
+const productTitle2 = "Mens Casual Premium Slim Fit T-Shirts";
+const productPrice2 = 179;
+const inStock2 = false;
+
+console.log(productTitle2);
+console.log(productPrice2);
+console.log(inStock2);
