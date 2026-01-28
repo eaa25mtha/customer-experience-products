@@ -42,40 +42,44 @@ function initApp() {
   displayAllProducts();
 }
 
+//hent productGrid id inde fra html filen
+const productGrid = document.querySelector("#productGrid");
+
 //displayAllProducts funktionen
 function displayAllProducts() {
-  innerHTML = "";
+  productGrid.innerHTML = "";
   for (const product of products) {
     displayProduct(product);
   }
 }
-
 displayAllProducts();
-
-//lagerstatus
-let stockText;
-let stockClass;
-if (products.inStock) {
-  stockText = "På lager";
-  stockClass = "in-stock";
-} else {
-  stockText = "Udsolgt";
-  stockClass = "out-of-stock";
-}
 
 //displayProduct funktionen
 function displayProduct(product) {
+  //lager status, vigtigt at denne er inde i funktionen
+  let stockText;
+  let stockClass;
+
+  if (product.inStock) {
+    stockText = "På lager";
+    stockClass = "in-stock";
+  } else {
+    stockText = "Udsolgt";
+    stockClass = "out-of-stock";
+  }
+
+  //produkt html, dom manipulation
   const html = /*html*/ `
-  <article class="product-card">
-    <img src="${products[0].image}" class="product-image">
-    <div class="product-info">
-      <h2 class="product-name">${products[0].title}</h2>
-      <p class="product-description">${products[0].description}</p>
-      <p class="product-price">${products[0].price} kr</p>
-      <span class="product-stock ${stockClass}">${stockText}</span>
-    </div>
-  </article>
-`;
+    <article class="product-card">
+      <img src="${product.image}" class="product-image">
+      <div class="product-info">
+        <h2 class="product-name">${product.title}</h2>
+        <p class="product-description">${product.description}</p>
+        <p class="product-price">${product.price}</p>
+        <span class="product-stock ${stockClass}">${stockText}</span>
+      </div>
+    </article>
+  `;
+
   document.querySelector("#test").insertAdjacentHTML("beforeend", html);
 }
-displayProduct(products[0]);
