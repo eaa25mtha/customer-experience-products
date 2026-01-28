@@ -10,7 +10,7 @@ function initApp() {
 }
 
 // ======== TEST SEKTION ===========
-//nyt produkt 1
+//produkt 1
 const productTitle = "Fjallraven - Foldsack No. 1 Backpack"; //string
 const productPrice = 849; //number
 const inStock = true; //boolean
@@ -20,7 +20,7 @@ console.log(typeof productTitle);
 console.log(typeof productPrice);
 console.log(typeof inStock);
 
-//Test af dom-manipulation
+//Test af dom-manipulation, indsæt i html
 const testSection = document.querySelector("#test");
 const html = `
   <div>
@@ -32,7 +32,7 @@ const html = `
 `;
 testSection.insertAdjacentHTML("beforeend", html);
 
-//nyt produkt 2
+//produkt 2
 const productTitle2 = "Mens Casual Premium Slim Fit T-Shirts";
 const productPrice2 = 179;
 const inStock2 = false;
@@ -40,3 +40,14 @@ const inStock2 = false;
 console.log(productTitle2);
 console.log(productPrice2);
 console.log(inStock2);
+
+const testSection2 = document.querySelector("#test");
+const html2 = `
+  <div>
+    <h3>Test 2: Produkt information</h3>
+    <p><strong>Titel:</strong> ${productTitle2}</p>
+    <p><strong>Pris:</strong> ${productPrice2}</p>
+    <p><strong>På lager</strong> ${inStock2}</p>
+  </div>
+`;
+testSection2.insertAdjacentHTML("beforeend", html2);
