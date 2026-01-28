@@ -4,8 +4,7 @@
 // Start app når DOM er loaded (hele HTML siden er færdig med at indlæse)
 document.addEventListener("DOMContentLoaded", initApp);
 
-// ======== TEST SEKTION ===========
-//data produkter
+//data - produkter
 const products = [
   {
     title: "Fjällraven Backpack",
@@ -36,13 +35,13 @@ const products = [
   },
 ];
 
-// Initialize the app
+// Initialize app
 function initApp() {
   console.log("App initialized");
   displayAllProducts();
 }
 
-//displayAllProducts funktionen
+//displayAllProducts funktionen - viser alle produkterne
 function displayAllProducts() {
   productGrid.innerHTML = "";
   for (const product of products) {
@@ -50,7 +49,7 @@ function displayAllProducts() {
   }
 }
 
-//displayProduct funktionen
+//displayProduct funktionen - viser ét produkt
 function displayProduct(product) {
   //lager status, vigtigt at denne er inde i funktionen
   let stockText;
