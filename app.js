@@ -21,26 +21,27 @@ const productPrice2 = 200;
 const inStock2 = false;
 
 //dom-manipulation
-if (productPrice < productPrice2) {
-  //hvis prisen på produkt 1 er mindst, skal den vises, ellers skal produkt 2 vises på siden
+if (inStock === true) {
   const testSection = document.querySelector("#test");
   const html = `
   <div>
     <h3>Test: Produkt information 1</h3>
     <p><strong>Titel:</strong> ${productTitle}</p>
     <p><strong>Pris:</strong> ${productPrice} kr</p>
-    <p><strong>På lager:</strong> ${inStock}</p>
+    <p style= "color: green;"><strong>På lager:</strong> ${inStock}</p>
   </div>
 `;
   testSection.insertAdjacentHTML("beforeend", html);
-} else {
+}
+
+if (inStock2 === false) {
   const testSection2 = document.querySelector("#test");
   const html2 = `
   <div>
     <h3>Test 2: Produkt information 2</h3>
     <p><strong>Titel:</strong> ${productTitle2}</p>
     <p><strong>Pris:</strong> ${productPrice2}</p>
-    <p><strong>På lager</strong> ${inStock2}</p>
+    <p style= "color: red;"><strong>På lager</strong> ${inStock2}</p> 
   </div>
 `;
   testSection2.insertAdjacentHTML("beforeend", html2);
