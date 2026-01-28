@@ -31,7 +31,18 @@ const product2 = {
   category: "men's clothing",
 };
 
+const product3 = {
+  title: "Opna Women's Short Sleeve Moisture",
+  price: 120,
+  inStock: false,
+  image: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+  description:
+    "Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit",
+  category: "Fitness",
+};
+
 //vis lagerstatus korrekt i stedet for true/false
+//produkt 1
 let stockText;
 let stockClass;
 if (product1.inStock) {
@@ -42,7 +53,30 @@ if (product1.inStock) {
   stockClass = "out-of-stock";
 }
 
+//produkt 2
+let stockText2;
+let stockClass2;
+if (product2.inStock) {
+  stockText2 = "På lager";
+  stockClass2 = "in-stock";
+} else {
+  stockText2 = "Udsolgt";
+  stockClass2 = "out-of-stock";
+}
+
+//produkt 3
+let stockText3;
+let stockClass3;
+if (product3.inStock) {
+  stockText3 = "På lager";
+  stockClass3 = "in-stock";
+} else {
+  stockText3 = "Udsolgt";
+  stockClass3 = "out-of-stock";
+}
+
 //vis objekterne på siden
+//prdoukt 1
 const html = /*html*/ `
   <article class="product-card">
     <img src="${product1.image}" class="product-image">
@@ -55,3 +89,31 @@ const html = /*html*/ `
   </article>
 `;
 document.querySelector("#test").insertAdjacentHTML("beforeend", html);
+
+//produkt 2
+const html2 = /*html*/ `
+  <article class="product-card">
+    <img src="${product2.image}" class="product-image">
+    <div class="product-info">
+      <h2 class="product-name">${product2.title}</h2>
+      <p class="product-description">${product2.description}</p>
+      <p class="product-price">${product2.price} kr</p>
+      <span class="product-stock ${stockClass2}">${stockText2}</span>
+    </div>
+  </article>
+`;
+document.querySelector("#test").insertAdjacentHTML("beforeend", html2);
+
+//produkt 3
+const html3 = /*html*/ `
+  <article class="product-card">
+    <img src="${product3.image}" class="product-image">
+    <div class="product-info">
+      <h2 class="product-name">${product3.title}</h2>
+      <p class="product-description">${product3.description}</p>
+      <p class="product-price">${product3.price} kr</p>
+      <span class="product-stock ${stockClass3}">${stockText3}</span>
+    </div>
+  </article>
+`;
+document.querySelector("#test").insertAdjacentHTML("beforeend", html3);
