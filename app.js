@@ -67,7 +67,14 @@ function displayProduct(product) {
 `;
   document.querySelector("#test").insertAdjacentHTML("beforeend", html);
 }
-
 displayProduct(products[0]);
 
-function displayAllProducts() {}
+//displayAllProducts funktionen
+function displayAllProducts() {
+  innerHTML = "";
+  for (let i = 0; i < products.length; i++) {
+    displayProduct(products[i]);
+  }
+}
+
+displayAllProducts();
