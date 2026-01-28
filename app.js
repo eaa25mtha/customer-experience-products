@@ -31,7 +31,27 @@ const product2 = {
   category: "men's clothing",
 };
 
-console.log(product1);
-console.log(product2);
-console.log(product1.title);
-console.log(product1.title + "koster" + product1.price + "kr");
+//vis lagerstatus korrekt i stedet for true/false
+let stockText;
+let stockClass;
+if (product1.inStock) {
+  stockText = "På lager";
+  stockClass = "in-stock";
+} else {
+  stockText = "Udsolgt";
+  stockClass = "out-of-stock";
+}
+
+//vis objekterne på siden
+const html = /*html*/ `
+  <article class="product-card">
+    <img src="${product1.image}" class="product-image">
+    <div class="product-info">
+      <h2 class="product-name">${product1.title}</h2>
+      <p class="product-description">${product1.description}</p>
+      <p class="product-price">${product1.price} kr</p>
+      <span class="product-stock ${stockClass}">${stockText}</span>
+    </div>
+  </article>
+`;
+document.querySelector("#test").insertAdjacentHTML("beforeend", html);
