@@ -21,19 +21,16 @@ console.log(typeof productPrice);
 console.log(typeof inStock);
 
 //Test af dom-manipulation, indsæt i html
-if (inStock) {
-  //hvis inStock = true, vises sektionen på siden
-  const testSection = document.querySelector("#test");
-  const html = `
+const testSection = document.querySelector("#test");
+const html = `
   <div>
-    <h3>Test: Produkt information</h3>
+    <h3>Test: Produkt information 1</h3>
     <p><strong>Titel:</strong> ${productTitle}</p>
     <p><strong>Pris:</strong> ${productPrice} kr</p>
     <p><strong>På lager:</strong> ${inStock}</p>
   </div>
 `;
-  testSection.insertAdjacentHTML("beforeend", html);
-}
+testSection.insertAdjacentHTML("beforeend", html);
 
 if (inStock) {
   console.log(`${productTitle} er på lager!`);
@@ -43,25 +40,19 @@ if (inStock) {
 
 //produkt 2
 const productTitle2 = "Mens Casual Premium Slim Fit T-Shirts";
-const productPrice2 = 179;
-const inStock2 = true;
+const productPrice2 = 200;
+const inStock2 = false;
 
-console.log(productTitle2);
-console.log(productPrice2);
-console.log(inStock2);
-
-if (inStock2) {
-  const testSection2 = document.querySelector("#test");
-  const html2 = `
+const testSection2 = document.querySelector("#test");
+const html2 = `
   <div>
-    <h3>Test 2: Produkt information</h3>
+    <h3>Test 2: Produkt information 2</h3>
     <p><strong>Titel:</strong> ${productTitle2}</p>
     <p><strong>Pris:</strong> ${productPrice2}</p>
     <p><strong>På lager</strong> ${inStock2}</p>
   </div>
 `;
-  testSection2.insertAdjacentHTML("beforeend", html2);
-}
+testSection2.insertAdjacentHTML("beforeend", html2);
 
 if (inStock2) {
   console.log(`${productTitle2} er på lager!`);
@@ -70,3 +61,19 @@ if (inStock2) {
 }
 
 //sammenligning af priser med if-sætninger
+if (productPrice > productPrice2) {
+  console.log(`${productTitle} er dyrest og koster ${productPrice} kr`);
+} else {
+  console.log(`${productTitle2} er dyrest og koster ${productPrice2} kr`);
+}
+
+//vis billigste produkt med if-sætning
+if (productPrice > productPrice2) {
+  console.log(
+    `${productTitle} er billigst, koster ${productPrice} kr og er på lager = ${inStock}`, //hvordan skriver man det uden at den viser true i konsollen?
+  );
+} else {
+  console.log(
+    `${productTitle2} er billigst, koster ${productPrice2} kr og er på lager = ${inStock2}`,
+  );
+}
