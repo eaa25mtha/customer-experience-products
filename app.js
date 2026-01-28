@@ -42,9 +42,6 @@ function initApp() {
   displayAllProducts();
 }
 
-//hent productGrid id inde fra html filen
-const productGrid = document.querySelector("#productGrid");
-
 //displayAllProducts funktionen
 function displayAllProducts() {
   productGrid.innerHTML = "";
@@ -52,7 +49,6 @@ function displayAllProducts() {
     displayProduct(product);
   }
 }
-displayAllProducts();
 
 //displayProduct funktionen
 function displayProduct(product) {
@@ -75,11 +71,14 @@ function displayProduct(product) {
       <div class="product-info">
         <h2 class="product-name">${product.title}</h2>
         <p class="product-description">${product.description}</p>
-        <p class="product-price">${product.price}</p>
+        <p class="product-price">${product.price} kr</p>
         <span class="product-stock ${stockClass}">${stockText}</span>
       </div>
     </article>
   `;
 
-  document.querySelector("#test").insertAdjacentHTML("beforeend", html);
+  document.querySelector("#productGrid").insertAdjacentHTML("beforeend", html);
 }
+
+/*Produktdataen ligger i js, og HTML bruges kun som container,
+som js dynamisk fylder med produktkort*/
