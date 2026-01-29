@@ -8,9 +8,7 @@ export function getExcerpt(text) {
 
 //hjælpefunktion til lagerstatus
 //condition ? valueIfTrue : valueIfFalse - ternary operator
-export function getStockStatus(inStock) {
-  const stockStatus = inStock
+export const getStockStatus = (inStock) =>
+  inStock
     ? { text: "På lager", class: "in-stock" }
     : { text: "Udsolgt", class: "out-of-stock" };
-  return stockStatus;
-}
