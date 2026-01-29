@@ -28,8 +28,6 @@ function displayAllProducts() {
 function displayProduct(product) {
   const stock = getStockStatus(product.inStock);
 
-  //produkt html, dom manipulation
-  //substring klipper teksten så den bliver kortere
   const html = /*html*/ `
     <article class="product-card">
       <img src="${product.image}" class="product-image">

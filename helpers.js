@@ -1,10 +1,12 @@
 //hjælpefunktioner til app.js
-//export af begge funktioner til app.js filen
+
+//getExcerpt funktion forkorter strings
 export function getExcerpt(text) {
   const excerpt = text.substring(0, 100) + "...";
   return excerpt;
 }
 
+//hjælpefunktion til lagerstatus
 export function getStockStatus(inStock) {
   if (inStock) {
     return {
