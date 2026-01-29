@@ -1,4 +1,4 @@
-import { getAllProducts } from "./helpers.js";
+import { getAllProducts, getStockStatus } from "./helpers.js";
 
 document.addEventListener("DOMContentLoaded", initProduct);
 
@@ -26,6 +26,8 @@ async function initProduct() {
 
 //vis produktet
 function displayProduct(product) {
+  const stock = getStockStatus(product.inStock);
+
   const html = /*html*/ `
     <div class="product-detail-container">
         <div class="product-image-large">
@@ -35,9 +37,24 @@ function displayProduct(product) {
             <h1>${product.title}</h1>
             <p class="category">Kategori: ${product.category}</p>
             <p class="price-large"> $${product.price}</p>
+            <span class="product-stock ${stock.class}">${stock.text}</span>
             <p>${product.description}</p>
+
+            <div class="rating">
+                <span> ⭐ ${product.rating.rate} / 5</span>
+                <span>(${product.rating.count} anmeldelser)</span>
+            </div>
+
+            <div class="description-full">
+                <h3>Beskrivelse</h3>
+                <p>${product.description}</p>
+            </div>
+
+            <button class="ass-to-cart-btn ${!product.inStock ? "disabled" : ""}">
+                ${product.inStock ? "Tilføj til kruv" : "Udsolgt"}
+            </button>
         </div>
-        </div>
+    </div>
     `;
 
   document.querySelector("#product").innerHTML = html;
