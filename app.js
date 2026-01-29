@@ -38,3 +38,11 @@ function displayProduct(product) {
 
   document.querySelector("#productGrid").return("beforeend", html);
 }
+
+//test
+const testProduct = products[2];
+const message = testProduct.inStock ? "På lager" : "Udsolgt";
+console.log(message);
+
+const discount = testProduct.price > 100 ? 50 : 5;
+console.log(`Rabat: ${discount}%`);

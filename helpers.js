@@ -7,16 +7,10 @@ export function getExcerpt(text) {
 }
 
 //hjælpefunktion til lagerstatus
+//condition ? valueIfTrue : valueIfFalse - ternary operator
 export function getStockStatus(inStock) {
-  if (inStock) {
-    return {
-      text: "På lager",
-      class: "in-stock",
-    };
-  } else {
-    return {
-      text: "Udsolgt",
-      class: "out-of-stock",
-    };
-  }
+  const stockStatus = inStock
+    ? { text: "På lager", class: "in-stock" }
+    : { text: "Udsolgt", class: "out-of-stock" };
+  return stockStatus;
 }
