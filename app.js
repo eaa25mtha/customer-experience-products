@@ -15,20 +15,16 @@ function initApp() {
 
 //displayAllProducts funktionen - viser alle produkterne
 function displayAllProducts() {
-  //ryd grid
-  document.querySelector("#productGrid").innerHTML = "";
-  //loop gennem alle produkter
-  for (const product of products) {
-    //kald displayProduct funktionen for hvert produkt
-    displayProduct(product);
-  }
+  const grid = document.querySelector("#productGrid");
+  //.map() bruges til at returnerer html strenge der sættes sammen med .join()
+  grid.innerHTML = products.map(displayProduct).join("");
 }
 
 //displayProduct funktionen - viser ét produkt
 function displayProduct(product) {
   const stock = getStockStatus(product.inStock);
 
-  const html = /*html*/ `
+  return /*html*/ `
     <article class="product-card">
       <img src="${product.image}" class="product-image">
       <div class="product-info">
@@ -40,6 +36,5 @@ function displayProduct(product) {
     </article>
   `;
 
-  //indsæt i DOM
-  document.querySelector("#productGrid").insertAdjacentHTML("beforeend", html);
+  document.querySelector("#productGrid").return("beforeend", html);
 }
