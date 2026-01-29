@@ -1,8 +1,9 @@
 //"use strict"; slår automatisk til når vi bruger modules
 
 // ===== APP INITIALISERING =====
-//import af produkter fra data.js filen
+//import
 import { products } from "./data.js";
+import { getExcerpt, getStockStatus } from "./helpers.js";
 
 // Start app når DOM er loaded (hele HTML siden er færdig med at indlæse)
 document.addEventListener("DOMContentLoaded", initApp);
@@ -21,23 +22,6 @@ function displayAllProducts() {
   for (const product of products) {
     //kald displayProduct funktionen for hvert produkt
     displayProduct(product);
-  }
-}
-
-//hjælpefunktion til lagerstatus
-let stockText;
-let stockClass;
-function getStockStatus(inStock) {
-  if (inStock) {
-    return {
-      text: "På lager",
-      class: "in-stock",
-    };
-  } else {
-    return {
-      text: "Udsolgt",
-      class: "out-of-stock",
-    };
   }
 }
 
