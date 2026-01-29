@@ -22,27 +22,17 @@ function displayAllProducts() {
 
 //displayProduct funktionen - viser ét produkt
 function displayProduct(product) {
-  const stock = getStockStatus(product.inStock);
-
   return /*html*/ `
     <article class="product-card">
-      <img src="${product.image}" class="product-image">
+      <img src="${product.image}" class="product-image" />
       <div class="product-info">
-        <h2 class="product-name">${product.title}</h2>
-        <p class="product-description">${getExcerpt(product.description)}</p> 
-        <p class="product-price">${product.price} kr</p>
-        <span class="product-stock ${stock.class}">${stock.text}</span>
+        <h2 class="product-title">${product.title}</h2>
+        <p class="product-description">${getExcerpt(product.description)}</p>
+        <p class="product-price">$${product.price}</p>
+        <span class="product-stock ${product.inStock ? "in-stock" : "out-of-stock"}">
+          ${product.inStock ? "På lager" : "Udsolgt"}
+        </span>
       </div>
     </article>
   `;
-
-  document.querySelector("#productGrid").return("beforeend", html);
 }
-
-//test
-const testProduct = products[2];
-const message = testProduct.inStock ? "På lager" : "Udsolgt";
-console.log(message);
-
-const discount = testProduct.price > 100 ? 50 : 5;
-console.log(`Rabat: ${discount}%`);
