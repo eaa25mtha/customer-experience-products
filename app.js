@@ -1,6 +1,5 @@
 //"use strict"; slår automatisk til når vi bruger modules
 
-// ===== APP INITIALISERING =====
 //import
 import { products } from "./data.js";
 import { getExcerpt, getStockStatus } from "./helpers.js";
@@ -36,9 +35,9 @@ function displayProduct(product) {
       <img src="${product.image}" class="product-image">
       <div class="product-info">
         <h2 class="product-name">${product.title}</h2>
-        <p class="product-description">${product.description}</p> 
+        <p class="product-description">${getExcerpt(product.description)}</p> 
         <p class="product-price">${product.price} kr</p>
-        <span class="product-stock ${stockClass}">${stockText}</span>
+        <span class="product-stock ${stock.class}">${stock.text}</span>
       </div>
     </article>
   `;
