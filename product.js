@@ -31,7 +31,7 @@ function displayProduct(product) {
   const html = /*html*/ `
     <div class="product-detail-container">
         <div class="product-image-large">
-            <img src"${product.image}" alt="${product.title}"/>
+            <img src="${product.image}" alt="${product.title}"/>
         </div>
         <div class="product-details">
             <h1>${product.title}</h1>
@@ -50,8 +50,8 @@ function displayProduct(product) {
                 <p>${product.description}</p>
             </div>
 
-            <button class="ass-to-cart-btn ${!product.inStock ? "disabled" : ""}">
-                ${product.inStock ? "Tilføj til kruv" : "Udsolgt"}
+            <button class="add-to-cart-btn ${!product.inStock ? "disabled" : ""}">
+                ${product.inStock ? "Tilføj til kurv" : "Udsolgt"}
             </button>
         </div>
     </div>

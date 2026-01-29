@@ -28,7 +28,7 @@ function displayProduct(product) {
         <img src="${product.image}" class="product-image" />
       </a>
       <div class="product-info">
-        <h2 class="product-title">${product.title}
+        <h2 class="product-title">
           <a href="product.html?id=${product.id}">${product.title}</a>
         </h2>
         <p class="product-description">${getExcerpt(product.description)}</p>
