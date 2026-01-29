@@ -58,4 +58,13 @@ function displayProduct(product) {
     `;
 
   document.querySelector("#product").innerHTML = html;
+
+  //eventlistener på knappen
+  const button = document.querySelector(".add-to-cart-btn");
+  if (product.inStock) {
+    button.addEventListener("click", () => {
+      console.log("Tilføj til kurv", product);
+      alert(`${product.title} tilføjet til kurv!`);
+    });
+  }
 }
