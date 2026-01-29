@@ -82,14 +82,3 @@ function displayProduct(product) {
 
 /*Produktdataen ligger i js, og HTML bruges kun som container,
 som js dynamisk fylder med produktkort*/
-
-//datatyper præsentation
-const eksempel = "det her er en string";
-console.log(typeof eksempel);
-console.log(eksempel);
-
-let eksempel2 = 200;
-console.log(eksempel2);
-
-let eksempel3 = true;
-console.log(typeof eksempel3);
