@@ -43,8 +43,11 @@ function initApp() {
 
 //displayAllProducts funktionen - viser alle produkterne
 function displayAllProducts() {
-  productGrid.innerHTML = "";
+  //ryd grid
+  document.querySelector("#productGrid").innerHTML = "";
+  //loop gennem alle produkter
   for (const product of products) {
+    //kald displayProduct funktionen for hvert produkt
     displayProduct(product);
   }
 }
@@ -53,13 +56,14 @@ function displayAllProducts() {
 function displayProduct(product) {
   //lager status, vigtigt at denne er inde i funktionen
   let stockText;
-  let stockClass;
+  let stockClass; //css-klasse til lagerstatus
 
   if (product.inStock) {
-    //hvis inStock findes
+    //hvis inStock findes/ er på lager
     stockText = "På lager";
     stockClass = "in-stock";
   } else {
+    //hvis inStock er udsolgt
     stockText = "Udsolgt";
     stockClass = "out-of-stock";
   }
@@ -77,6 +81,7 @@ function displayProduct(product) {
     </article>
   `;
 
+  //indsæt i DOM
   document.querySelector("#productGrid").insertAdjacentHTML("beforeend", html);
 }
 
