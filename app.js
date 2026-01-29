@@ -1,26 +1,26 @@
 //"use strict"; slår automatisk til når vi bruger modules
 
 //import
-//import { products } from "./data.js";
-import { getExcerpt, getStockStatus } from "./helpers.js";
+import { getExcerpt, getStockStatus, getAllProducts } from "./helpers.js";
 
 // Start app når DOM er loaded (hele HTML siden er færdig med at indlæse)
 document.addEventListener("DOMContentLoaded", initApp);
 
 // Initialize app
-function initApp() {
-  console.log("App initialized");
-  displayAllProducts();
+async function initApp() {
+  console.log("App initialized 🚀");
+  const products = await getAllProducts(); //opdateret til at være async
+  displayAllProducts(products);
 }
 
-//displayAllProducts funktionen - viser alle produkterne
-function displayAllProducts() {
+//vis alle produkter
+//.map() returnerer html strenge som .join() sætter sammen
+const displayAllProducts = (products) => {
   const grid = document.querySelector("#productGrid");
-  //.map() bruges til at returnerer html strenge der sættes sammen med .join()
   grid.innerHTML = products.map(displayProduct).join("");
-}
+};
 
-//displayProduct funktionen - viser ét produkt
+//vis ét produkt
 function displayProduct(product) {
   return /*html*/ `
     <article class="product-card">
