@@ -1,5 +1,6 @@
 //data - produkter
-//export skaber forbindelse mellem filerne, her er det named export
+//export skaber forbindelse mellem filerne, her bruger vi named export
+//vi bruger ikke denne data struktur længere fordi vi henter data fra JSON filen i stedet, strukturen kan bruges til reference
 export const products = [
   {
     id: 1,

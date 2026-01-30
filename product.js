@@ -50,6 +50,7 @@ function displayProduct(product) {
                 <p>${product.description}</p>
             </div>
 
+            <!--ternary operator-->
             <button class="add-to-cart-btn ${!product.inStock ? "disabled" : ""}">
                 ${product.inStock ? "Tilføj til kurv" : "Udsolgt"}
             </button>
